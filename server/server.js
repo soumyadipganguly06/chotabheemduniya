@@ -14,7 +14,10 @@ async function retrieve() {
     const characters = database.collection("characters");
     const chota_bheem_characters = await characters.find({}).toArray();
     return chota_bheem_characters;
-  } finally {
+  } catch {
+    
+  }
+  finally {
     client.close();
   } 
 }
